@@ -1,3 +1,19 @@
+# Spotify App
+
+A Spotify clone using the [Spotify API](https://developer.spotify.com/documentation/web-api/).
+
+### Project Goals
+
+### How the app works
+
+### Technologies Used
+
+- JavaScript
+- HTML/CSS
+- React JS
+
+### Remaining Backlog Items
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
