@@ -5,7 +5,7 @@ import Search from "./Search";
 
 const App = () => {
   return (
-    <div>
+    <div className="ui container">
       <Header />
       <Search />
     </div>
