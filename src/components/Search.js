@@ -5,16 +5,19 @@ import Card from "./Card";
 const Search = () => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
-  // componentDidMount() {
-  //   getAuth();
+  // if (!results) {
+  //   setIsLoading(true);
   // }
+
+  getAuth();
 
   // renderResults = results.map(<Card />)
 
   return (
     <div>
-      <form className="ui form">
+      <form className={`ui ${isLoading ? "loading" : null} form`}>
         <div className="field">
           <input
             type="text"
