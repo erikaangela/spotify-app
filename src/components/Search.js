@@ -2,6 +2,13 @@ import React, { useState } from "react";
 import { getAuth } from "./SpotifyAuth";
 import Card from "./Card";
 
+// import SpotifyWebApi from "spotify-web-api-js";
+
+// // const Spotify = require("spotify-web-api-js");
+// // const s = new Spotify();
+
+// const spotifyApi = new SpotifyWebApi();
+
 const Search = () => {
   const [term, setTerm] = useState("");
   const [results, setResults] = useState(null);

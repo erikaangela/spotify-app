@@ -1,12 +1,3 @@
-// import axios from "axios";
-// import SpotifyWebApi from "spotify-web-api-js";
-
-// // const Spotify = require("spotify-web-api-js");
-// // const s = new Spotify();
-
-// export const SpotifyAuth = async () => {
-//   //   const spotifyApi = new SpotifyWebApi();
-
 import axios from "axios";
 
 export const getAuth = async () => {
@@ -22,8 +13,8 @@ export const getAuth = async () => {
           window.btoa(REACT_APP_CLIENT_ID + ":" + REACT_APP_CLIENT_SECRET),
       },
       data: "grant_type=client_credentials",
-    }).then((response) => {
-      console.log(response);
+    }).then((res) => {
+      console.log(res);
     });
   } catch (error) {
     console.log(error);
