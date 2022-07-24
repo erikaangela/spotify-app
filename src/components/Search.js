@@ -1,40 +1,63 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import SpotifyWebApi from "spotify-web-api-js";
+
 import { getAuth } from "./SpotifyAuth";
 import Card from "./Card";
 
-// import SpotifyWebApi from "spotify-web-api-js";
-
-// // const Spotify = require("spotify-web-api-js");
-// // const s = new Spotify();
-
-// const spotifyApi = new SpotifyWebApi();
-
 const Search = () => {
+  const spotifyApi = new SpotifyWebApi();
+
   const [term, setTerm] = useState("");
-  const [results, setResults] = useState(null);
-  const [isLoading, setIsLoading] = useState(false);
+  const [results, setResults] = useState([]);
 
-  // if (!results) {
-  //   setIsLoading(true);
-  // }
+  useEffect(() => {
+    getAuth();
+  }, [results]);
 
-  getAuth();
+  const onSubmit = (e) => {
+    e.preventDefault();
+    getAuth();
 
-  // renderResults = results.map(<Card />)
+    if (!term) {
+      console.log("You need to enter a song title");
+    } else {
+      spotifyApi.searchTracks(term).then((data) => {
+        const renderTrackDetails = data.tracks.items.map((item) => {
+          const { id, name, artists, album, href } = item;
+          return {
+            trackId: id,
+            title: name,
+            artist: artists[0].name,
+            image: album.images[2].url,
+            link: href,
+          };
+        });
+
+        setResults(renderTrackDetails);
+      });
+    }
+  };
+
+  console.log(results);
+  const renderResults = results.map((result) => {
+    return <Card key={trackId} src={image} />;
+  });
 
   return (
     <div>
-      <form className={`ui ${isLoading ? "loading" : null} form`}>
+      <form className="ui form" onSubmit={onSubmit}>
         <div className="field">
           <input
             type="text"
             name="search"
-            placeholder="Search by song..."
+            value={term}
+            onChange={(e) => setTerm(e.target.value)}
+            placeholder="Search by song title..."
             autoComplete="off"
           />
         </div>
       </form>
-      <div className="ui four cards">{/* {renderResults} */}</div>
+      <div className="ui four cards">{renderResults}</div>
     </div>
   );
 };
