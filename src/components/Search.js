@@ -20,9 +20,9 @@ const Search = () => {
     getAuth();
 
     if (!term.trim()) {
-      console.log("You need to enter a song title");
+      console.log("Invalid input");
     } else {
-      spotifyApi.searchTracks(term).then((data) => {
+      spotifyApi.searchTracks(term, { limit: 50 }).then((data) => {
         const renderTrackDetails = data.tracks.items.map((item) => {
           const { id, name, artists, album, external_urls } = item;
           return {
@@ -35,7 +35,7 @@ const Search = () => {
         });
 
         if (data.tracks.items.length === 0) {
-          console.log("no results");
+          console.log("No results found");
         }
 
         setResults(renderTrackDetails);

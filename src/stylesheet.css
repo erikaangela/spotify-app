@@ -1,6 +1,12 @@
+body {
+  background-color: #191414 !important;
+}
+
 .ui.container {
   background-color: #191414;
   padding: 30px;
+  margin: 0px !important;
+  width: 100%;
 }
 
 .ui.center.aligned.icon.inverted.header {
@@ -13,11 +19,32 @@
   padding-bottom: 30px;
 }
 
+.ui.form .field {
+  padding-left: 150px;
+  padding-right: 150px;
+}
+
 .circular.spotify.icon {
   background-color: #1db954;
   color: #ecebe8;
 }
 
+.ui.four.doubling.cards {
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
 .ui.card {
   background-color: #ecebe8;
+}
+
+@media only screen and (max-width: 768px) {
+  .ui.four.doubling.cards {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .ui.form .field {
+    padding: 0px;
+  }
 }
