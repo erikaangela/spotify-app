@@ -3,6 +3,7 @@ import SpotifyWebApi from "spotify-web-api-js";
 
 import { getAuth } from "./SpotifyAuth";
 import Card from "./Card";
+import "../stylesheet.css";
 
 const Search = () => {
   const spotifyApi = new SpotifyWebApi();
@@ -18,7 +19,7 @@ const Search = () => {
     e.preventDefault();
     getAuth();
 
-    if (!term) {
+    if (!term.trim()) {
       console.log("You need to enter a song title");
     } else {
       spotifyApi.searchTracks(term).then((data) => {
@@ -62,7 +63,7 @@ const Search = () => {
           />
         </div>
       </form>
-      <div className="ui four cards">{renderResults}</div>
+      <div className="ui four doubling cards">{renderResults}</div>
     </div>
   );
 };

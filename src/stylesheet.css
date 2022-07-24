@@ -1,0 +1,23 @@
+.ui.container {
+  background-color: #191414;
+  padding: 30px;
+}
+
+.ui.center.aligned.icon.inverted.header {
+  padding: 20px;
+  color: #ecebe8;
+}
+
+.ui.form {
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.circular.spotify.icon {
+  background-color: #1db954;
+  color: #ecebe8;
+}
+
+.ui.card {
+  background-color: #ecebe8;
+}

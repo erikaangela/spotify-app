@@ -1,8 +1,10 @@
 import React from "react";
 
+import "../stylesheet.css";
+
 const Card = ({ result }) => {
   return (
-    <a className="ui green card" href={result.link} target="_blank">
+    <a className="ui card" href={result.link} target="_blank">
       <div className="image">
         <img src={result.image} />
       </div>
