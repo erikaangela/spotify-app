@@ -1,20 +1,16 @@
 import React from "react";
 
-const Card = (id, src) => {
+const Card = ({ result }) => {
   return (
-    <div className="ui green card" key={id}>
-      <a className="image" href="#">
-        <img src={src} />
-      </a>
-      <div className="content">
-        <a className="header" href="#">
-          Song
-        </a>
-        <div className="meta">
-          <a>Artist</a>
-        </div>
+    <a className="ui green card" href={result.link} target="_blank">
+      <div className="image">
+        <img src={result.image} />
       </div>
-    </div>
+      <div className="content">
+        <div className="header">{result.title}</div>
+        <div className="meta">{result.artist}</div>
+      </div>
+    </a>
   );
 };
 

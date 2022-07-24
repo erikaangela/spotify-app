@@ -23,24 +23,29 @@ const Search = () => {
     } else {
       spotifyApi.searchTracks(term).then((data) => {
         const renderTrackDetails = data.tracks.items.map((item) => {
-          const { id, name, artists, album, href } = item;
+          const { id, name, artists, album, external_urls } = item;
           return {
             trackId: id,
             title: name,
             artist: artists[0].name,
-            image: album.images[2].url,
-            link: href,
+            image: album.images[0].url,
+            link: external_urls.spotify,
           };
         });
+
+        if (data.tracks.items.length === 0) {
+          console.log("no results");
+        }
 
         setResults(renderTrackDetails);
       });
     }
+
+    setTerm("");
   };
 
-  console.log(results);
   const renderResults = results.map((result) => {
-    return <Card key={trackId} src={image} />;
+    return <Card result={result} key={result.trackId} />;
   });
 
   return (
@@ -52,7 +57,7 @@ const Search = () => {
             name="search"
             value={term}
             onChange={(e) => setTerm(e.target.value)}
-            placeholder="Search by song title..."
+            placeholder="Search by title, artist, or album..."
             autoComplete="off"
           />
         </div>
