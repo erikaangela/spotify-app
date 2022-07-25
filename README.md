@@ -4,15 +4,27 @@ A Spotify clone using the [Spotify API](https://developer.spotify.com/documentat
 
 ### Project Goals
 
+* Apply React, Axios, and the [Spotify Web API JS npm package](https://github.com/jmperez/spotify-web-api-js).
+* Use environment variables to store client ID and secret.
+* Use the Spotify API through following the [Client Credentials Flow](https://developer.spotify.com/documentation/general/guides/authorization/client-credentials/).
+
 ### How the app works
+
+The one-page app first displays a Spotify logo and searchbar. Users can search by inputting any title, artist, or album; upon submitting, the first 50 results are rendered as clickable cards containing the song image, title, and artist. Clicking any will open the song on Spotify in a new tab.
 
 ### Technologies Used
 
-- JavaScript
-- HTML/CSS
-- React JS
+* JavaScript
+* HTML/CSS
+* React JS
+* APIs&mdash;[Spotify](https://developer.spotify.com/documentation/web-api/)
+* environment variables
+* Axios
 
 ### Remaining Backlog Items
+
+* Further styling, CSS themes.
+* Explicit error messages when user has an invalid input or no results are found.
 
 # Getting Started with Create React App
 
