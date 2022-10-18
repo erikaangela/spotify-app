@@ -60,6 +60,7 @@ const Search = () => {
             onChange={(e) => setTerm(e.target.value)}
             placeholder="Search by title, artist, or album..."
             autoComplete="off"
+            aria-label="Searchbar"
           />
         </div>
       </form>

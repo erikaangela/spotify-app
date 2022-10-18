@@ -18,7 +18,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest __test__/ --coverage",
+    "test": "jest __tests__/ --coverage",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -40,6 +40,10 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.18.6"
+    "@babel/preset-env": "^7.19.4",
+    "@babel/preset-react": "^7.18.6",
+    "babel-jest": "^29.2.1",
+    "jest": "^27.5.1",
+    "react-test-renderer": "^18.2.0"
   }
 }
