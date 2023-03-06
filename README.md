@@ -10,7 +10,7 @@ A Spotify clone using the [Spotify API](https://developer.spotify.com/documentat
 
 ### How the app works
 
-The one-page app first displays a Spotify logo and searchbar. Users can search by inputting any title, artist, or album; upon submitting, the first 50 results are rendered as clickable cards containing the song image, title, and artist. Clicking any will open the song on Spotify in a new tab.
+The one-page app first displays a Spotify logo and searchbar. Users can search by inputting any keyword; upon submitting, the first 50 results are rendered as clickable cards containing the song image, title, and artist. Clicking any will open the song on Spotify in a new tab.
 
 ### Technologies Used
 
